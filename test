@@ -1,0 +1,5 @@
+list = ["MARTIN","RHAY"]
+list.append("Ken")
+print(list)
+Tax=2+2
+print(Tax)

@@ -1,0 +1,32 @@
+def encrypt(text, shift):
+  """
+  Encrypts the given text using the Caesar Cipher method.
+
+  text: string -- the text to be encrypted
+  shift: int -- the number of positions to shift the text
+
+  returns: string -- the encrypted text
+  """
+  encrypted_text = ""
+  for ch in text:
+    if ch.isalpha():
+      shift_ch = chr((ord(ch) - ord('a') + shift) % 26 + ord('a'))
+      encrypted_text += shift_ch
+    else:
+      encrypted_text += ch
+  return encrypted_text
+
+def decrypt(text, shift):
+  """
+  Decrypts the given text using the Caesar Cipher method.
+
+  text: string -- the text to be decrypted
+  shift: int -- the number of positions to shift the text
+
+  returns: string -- the decrypted text
+  """
+  return encrypt(text, 26 - shift)
+
+def enter_message():
+  while True:
+    mode = input("Enter the mode of conversion
